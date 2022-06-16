@@ -6,5 +6,10 @@ namespace GMedranda_ACT
         {
             InitializeComponent();
         }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
