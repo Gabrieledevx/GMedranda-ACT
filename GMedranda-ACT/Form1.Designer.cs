@@ -31,23 +31,24 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnagregar = new System.Windows.Forms.Button();
+            this.txtcarrera = new System.Windows.Forms.TextBox();
+            this.txtnombres = new System.Windows.Forms.TextBox();
+            this.txtapellidos = new System.Windows.Forms.TextBox();
             this.txtcedula = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.colced = new System.Windows.Forms.ColumnHeader();
-            this.colape = new System.Windows.Forms.ColumnHeader();
-            this.colnom = new System.Windows.Forms.ColumnHeader();
-            this.colcarr = new System.Windows.Forms.ColumnHeader();
-            this.btneliminar = new System.Windows.Forms.Button();
-            this.btnelementos = new System.Windows.Forms.Button();
             this.btnelmelim = new System.Windows.Forms.Button();
+            this.btnelementos = new System.Windows.Forms.Button();
+            this.btneliminar = new System.Windows.Forms.Button();
+            this.miview = new System.Windows.Forms.ListView();
+            this.colced = new System.Windows.Forms.ColumnHeader();
+            this.colnom = new System.Windows.Forms.ColumnHeader();
+            this.colape = new System.Windows.Forms.ColumnHeader();
+            this.colcarr = new System.Windows.Forms.ColumnHeader();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +56,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 328);
+            this.label1.Location = new System.Drawing.Point(26, 341);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(193, 20);
             this.label1.TabIndex = 0;
@@ -63,9 +64,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.btnagregar);
+            this.groupBox1.Controls.Add(this.txtcarrera);
+            this.groupBox1.Controls.Add(this.txtnombres);
+            this.groupBox1.Controls.Add(this.txtapellidos);
             this.groupBox1.Controls.Add(this.txtcedula);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -73,46 +75,58 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(26, 59);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(334, 237);
+            this.groupBox1.Size = new System.Drawing.Size(334, 279);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
-            // textBox3
+            // btnagregar
             // 
-            this.textBox3.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox3.Location = new System.Drawing.Point(109, 194);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(219, 27);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.Text = "Ingrese su carrera";
+            this.btnagregar.Location = new System.Drawing.Point(29, 241);
+            this.btnagregar.Name = "btnagregar";
+            this.btnagregar.Size = new System.Drawing.Size(275, 29);
+            this.btnagregar.TabIndex = 8;
+            this.btnagregar.Text = "Agregar Alumno";
+            this.btnagregar.UseVisualStyleBackColor = true;
+            this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
-            // textBox1
+            // txtcarrera
             // 
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.Location = new System.Drawing.Point(106, 146);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 27);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "Ingrese sus nombres";
+            this.txtcarrera.ForeColor = System.Drawing.Color.Black;
+            this.txtcarrera.Location = new System.Drawing.Point(109, 194);
+            this.txtcarrera.Name = "txtcarrera";
+            this.txtcarrera.PlaceholderText = "Ingrese su carrera";
+            this.txtcarrera.Size = new System.Drawing.Size(219, 27);
+            this.txtcarrera.TabIndex = 7;
             // 
-            // textBox2
+            // txtnombres
             // 
-            this.textBox2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox2.Location = new System.Drawing.Point(106, 102);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 27);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "Ingrese sus apellidos";
+            this.txtnombres.ForeColor = System.Drawing.Color.Black;
+            this.txtnombres.Location = new System.Drawing.Point(106, 146);
+            this.txtnombres.Name = "txtnombres";
+            this.txtnombres.PlaceholderText = "Ingrese sus nombres";
+            this.txtnombres.Size = new System.Drawing.Size(222, 27);
+            this.txtnombres.TabIndex = 6;
+            // 
+            // txtapellidos
+            // 
+            this.txtapellidos.ForeColor = System.Drawing.Color.Black;
+            this.txtapellidos.Location = new System.Drawing.Point(106, 102);
+            this.txtapellidos.Name = "txtapellidos";
+            this.txtapellidos.PlaceholderText = "Ingrese sus apellidos";
+            this.txtapellidos.Size = new System.Drawing.Size(222, 27);
+            this.txtapellidos.TabIndex = 5;
+            this.txtapellidos.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtcedula
             // 
-            this.txtcedula.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtcedula.ForeColor = System.Drawing.Color.Black;
             this.txtcedula.Location = new System.Drawing.Point(106, 53);
             this.txtcedula.Name = "txtcedula";
+            this.txtcedula.PlaceholderText = "Ingrese su cedula";
             this.txtcedula.Size = new System.Drawing.Size(222, 27);
             this.txtcedula.TabIndex = 4;
-            this.txtcedula.Text = "Ingrese su cedula";
+            this.txtcedula.TextChanged += new System.EventHandler(this.txtcedula_TextChanged);
             // 
             // label5
             // 
@@ -155,50 +169,33 @@
             this.groupBox2.Controls.Add(this.btnelmelim);
             this.groupBox2.Controls.Add(this.btnelementos);
             this.groupBox2.Controls.Add(this.btneliminar);
-            this.groupBox2.Controls.Add(this.listView1);
+            this.groupBox2.Controls.Add(this.miview);
             this.groupBox2.Location = new System.Drawing.Point(391, 59);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(654, 237);
+            this.groupBox2.Size = new System.Drawing.Size(654, 279);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Listado";
             // 
-            // listView1
+            // btnelmelim
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colced,
-            this.colape,
-            this.colnom,
-            this.colcarr});
-            this.listView1.Location = new System.Drawing.Point(4, 29);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(405, 192);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.btnelmelim.Location = new System.Drawing.Point(432, 146);
+            this.btnelmelim.Name = "btnelmelim";
+            this.btnelmelim.Size = new System.Drawing.Size(216, 42);
+            this.btnelmelim.TabIndex = 3;
+            this.btnelmelim.Text = "Ver elementos eliminados";
+            this.btnelmelim.UseVisualStyleBackColor = true;
+            this.btnelmelim.Click += new System.EventHandler(this.btnelmelim_Click);
             // 
-            // colced
+            // btnelementos
             // 
-            this.colced.Text = "Cédula";
-            this.colced.Width = 100;
-            // 
-            // colape
-            // 
-            this.colape.Text = "Apellidos";
-            this.colape.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colape.Width = 100;
-            // 
-            // colnom
-            // 
-            this.colnom.Text = "Nombres";
-            this.colnom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colnom.Width = 100;
-            // 
-            // colcarr
-            // 
-            this.colcarr.Text = "Carrera";
-            this.colcarr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colcarr.Width = 100;
+            this.btnelementos.Location = new System.Drawing.Point(429, 87);
+            this.btnelementos.Name = "btnelementos";
+            this.btnelementos.Size = new System.Drawing.Size(219, 42);
+            this.btnelementos.TabIndex = 2;
+            this.btnelementos.Text = "Ver elementos agregados";
+            this.btnelementos.UseVisualStyleBackColor = true;
+            this.btnelementos.Click += new System.EventHandler(this.btnelementos_Click);
             // 
             // btneliminar
             // 
@@ -210,33 +207,56 @@
             this.btneliminar.UseVisualStyleBackColor = true;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
-            // btnelementos
+            // miview
             // 
-            this.btnelementos.Location = new System.Drawing.Point(429, 87);
-            this.btnelementos.Name = "btnelementos";
-            this.btnelementos.Size = new System.Drawing.Size(219, 42);
-            this.btnelementos.TabIndex = 2;
-            this.btnelementos.Text = "Elementos agregados";
-            this.btnelementos.UseVisualStyleBackColor = true;
+            this.miview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colced,
+            this.colnom,
+            this.colape,
+            this.colcarr});
+            this.miview.Location = new System.Drawing.Point(6, 29);
+            this.miview.Name = "miview";
+            this.miview.Size = new System.Drawing.Size(405, 244);
+            this.miview.TabIndex = 0;
+            this.miview.UseCompatibleStateImageBehavior = false;
+            this.miview.View = System.Windows.Forms.View.Details;
+            this.miview.SelectedIndexChanged += new System.EventHandler(this.miview_SelectedIndexChanged);
             // 
-            // btnelmelim
+            // colced
             // 
-            this.btnelmelim.Location = new System.Drawing.Point(432, 146);
-            this.btnelmelim.Name = "btnelmelim";
-            this.btnelmelim.Size = new System.Drawing.Size(216, 42);
-            this.btnelmelim.TabIndex = 3;
-            this.btnelmelim.Text = "Ver elementos eliminados";
-            this.btnelmelim.UseVisualStyleBackColor = true;
+            this.colced.Text = "Cédula";
+            this.colced.Width = 100;
+            // 
+            // colnom
+            // 
+            this.colnom.DisplayIndex = 2;
+            this.colnom.Text = "Nombres";
+            this.colnom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colnom.Width = 100;
+            // 
+            // colape
+            // 
+            this.colape.DisplayIndex = 1;
+            this.colape.Text = "Apellidos";
+            this.colape.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colape.Width = 100;
+            // 
+            // colcarr
+            // 
+            this.colcarr.Text = "Carrera";
+            this.colcarr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colcarr.Width = 100;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 348);
+            this.ClientSize = new System.Drawing.Size(1057, 372);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -255,18 +275,19 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private TextBox textBox3;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtcarrera;
+        private TextBox txtnombres;
+        private TextBox txtapellidos;
         private TextBox txtcedula;
         private GroupBox groupBox2;
-        private ListView listView1;
+        private Button btnelementos;
+        private Button btneliminar;
+        private Button btnelmelim;
+        private Button btnagregar;
+        private ListView miview;
         private ColumnHeader colced;
         private ColumnHeader colape;
         private ColumnHeader colnom;
         private ColumnHeader colcarr;
-        private Button btnelementos;
-        private Button btneliminar;
-        private Button btnelmelim;
     }
 }
