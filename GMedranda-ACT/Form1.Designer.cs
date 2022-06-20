@@ -2,6 +2,7 @@
 {
     partial class Form1
     {
+        /// Gabriel Medranda
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -237,6 +238,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Registro";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
